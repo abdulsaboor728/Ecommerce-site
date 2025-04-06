@@ -2,7 +2,36 @@ const express = require('express');
 const router = express.Router();
 const Item = require('../models/Item');
 const User = require('../models/User');
+const { MongoClient } = require('mongodb');
 
+let cachedDb = null;
+
+async function connectToDatabase(uri) {
+  if (cachedDb) return cachedDb;
+  const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  const db = client.db('cluster0');
+  cachedDb = db;
+  return db;
+}
+
+export default async (req, res) => {
+  const { method } = req;
+  const db = await connectToDatabase(process.env.MONGODB_URI);
+  
+  if (method === 'GET') {
+    // Example: Retrieve items
+    const items = await db.collection('items').find({}).toArray();
+    res.status(200).json(items);
+  } else if (method === 'POST') {
+    // Example: Create new item
+    const newItem = req.body;
+    const result = await db.collection('items').insertOne(newItem);
+    res.status(201).json(result.ops[0]);
+  } else {
+    res.setHeader('Allow', ['GET', 'POST']);
+    res.status(405).end(`Method ${method} Not Allowed`);
+  }
+};
 // GET all items
 router.get('/', async (req, res) => {
   try {
