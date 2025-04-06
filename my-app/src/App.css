@@ -1,0 +1,240 @@
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* smooth transitions for hover, focus, etc. */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ccc;
+}
+
+/* Main Container for Pages */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Shared Panel Styles */
+.panel {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Home Page Panel */
+.home-panel {
+  /* Inherits .panel styles */
+}
+
+/* Item Cards on Home Page */
+.item-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Image in Item Card */
+.item-card img {
+  max-width: 120px;
+  margin-right: 20px;
+  float: left;
+  border-radius: 4px;
+}
+
+/* Clear floats if needed */
+.item-card::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Login Panel */
+.login-panel {
+  /* Inherits .panel styles */
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.login-panel h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-panel form input,
+.login-panel form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-panel form input:focus {
+  border-color: #333;
+  outline: none;
+}
+
+.login-panel form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-panel form button:hover {
+  background-color: #555;
+}
+
+.login-panel p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Admin Panel */
+.admin-panel {
+  /* Inherits .panel styles */
+  position: relative;
+}
+
+/* Highlight for admin view */
+.admin-panel.highlight {
+  border: 2px solid green;
+}
+
+/* Blurred for non-admin */
+.admin-panel.blurred {
+  filter: blur(4px);
+}
+
+/* Warning Message if not admin */
+.admin-panel .warning {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Admin form styling */
+.admin-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-panel form input,
+.admin-panel form select,
+.admin-panel form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.admin-panel form input:focus,
+.admin-panel form select:focus {
+  border-color: #333;
+  outline: none;
+}
+
+.admin-panel form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-panel form button:hover {
+  background-color: #555;
+}
+/* Existing global and panel styles... */
+
+/* Navigation Bar */
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Navigation links */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ccc;
+}
+
+/* User Info Section in Navbar */
+.navbar .user-info {
+  margin-left: auto; /* Push user info to the right */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .user-info span {
+  color: #fff;
+}
+
+.navbar .user-info button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .user-info button:hover {
+  background-color: #555;
+}

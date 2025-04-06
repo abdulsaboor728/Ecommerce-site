@@ -1,0 +1,67 @@
+/* login.css */
+
+/* Container for the login/registration form */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+  }
+  
+  /* Heading styles */
+  .login-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form layout */
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Input and button styling */
+  .login-container form input,
+  .login-container form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Input focus effect */
+  .login-container form input:focus {
+    border-color: #333;
+    outline: none;
+  }
+  
+  /* Button specific styling */
+  .login-container form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Button hover effect */
+  .login-container form button:hover {
+    background-color: #555;
+  }
+  
+  /* Toggle between login and registration */
+  .login-container p {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
+  }
+  
